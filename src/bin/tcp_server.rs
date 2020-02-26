@@ -8,7 +8,7 @@ type DynResult<T> = std::result::Result<T, Box<dyn error::Error>>;
 
 fn main() -> DynResult<()> {
     {
-        let listener = TcpListener::bind("127.0.0.1:8001")?;
+        let listener = TcpListener::bind("0.0.0.0:8001")?;
         println!("Waiting connection from a client on 127.0.0.1:8001 ...");
         let (mut socket, _addr) = listener.accept()?;
         println!("Connected.");
